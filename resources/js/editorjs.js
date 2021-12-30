@@ -29,8 +29,6 @@ window.editorInstance = function(dataProperty, editorId, readOnly, placeholder, 
                         class: ImageTool,
 
                         config: {
-                            withBorder: true,
-                            withBackground: true,
                             uploader: {
                                 uploadByFile: (file) => {
                                     return new Promise((resolve) => {
