@@ -82,12 +82,15 @@ window.editorInstance = function(dataProperty, editorId, readOnly, placeholder, 
                     underline: Underline,
                     code: Code,
                     'inline-code': InlineCode,
-                    quote: Quote
+                    quote: Quote,
+                    markdownParser: MDParser,
+                    markdownImporter: MDImporter,
                 },
 
                 data: this.data,
 
                 onChange: () => {
+                    window.dispatchEvent(new CustomEvent('wt-editorjs-change', {}));
                     this.instance.save().then((outputData) => {
                         this.$wire.set(dataProperty, outputData);
 
