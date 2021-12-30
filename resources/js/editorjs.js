@@ -7,7 +7,7 @@ import Code from '@editorjs/code';
 import InlineCode from '@editorjs/inline-code';
 import Quote from '@editorjs/quote';
 
-window.editorInstance = function(dataProperty, editorId, readOnly, placeholder, logLevel) {
+window.editorInstance = function(dataProperty, editorId, readOnly, placeholder, logLevel, tools) {
     return {
         instance: null,
         data: null,
@@ -24,7 +24,7 @@ window.editorInstance = function(dataProperty, editorId, readOnly, placeholder, 
 
                 logLevel,
 
-                tools: {
+                tools: typeof tools !== 'undefined' ? tools : {
                     image: {
                         class: ImageTool,
 
@@ -83,8 +83,6 @@ window.editorInstance = function(dataProperty, editorId, readOnly, placeholder, 
                     code: Code,
                     'inline-code': InlineCode,
                     quote: Quote,
-                    markdownParser: MDParser,
-                    markdownImporter: MDImporter,
                 },
 
                 data: this.data,
