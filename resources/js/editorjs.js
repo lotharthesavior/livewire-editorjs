@@ -29,6 +29,8 @@ window.editorInstance = function(dataProperty, editorId, readOnly, placeholder, 
                         class: ImageTool,
 
                         config: {
+                            withBorder: true,
+                            withBackground: true,
                             uploader: {
                                 uploadByFile: (file) => {
                                     return new Promise((resolve) => {
@@ -71,7 +73,14 @@ window.editorInstance = function(dataProperty, editorId, readOnly, placeholder, 
                         }
                     },
                     list: List,
-                    header: Header,
+                    header: {
+                        class: Header,
+                        config: {
+                            placeholder: 'Enter a header',
+                            levels: [2, 3, 4],
+                            defaultLevel: 3
+                        }
+                    }
                     underline: Underline,
                     code: Code,
                     'inline-code': InlineCode,
