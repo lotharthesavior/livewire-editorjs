@@ -78,7 +78,7 @@ window.editorInstance = function(dataProperty, editorId, readOnly, placeholder, 
                             levels: [2, 3, 4],
                             defaultLevel: 3
                         }
-                    }
+                    },
                     underline: Underline,
                     code: Code,
                     'inline-code': InlineCode,
